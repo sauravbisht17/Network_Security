@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ### Network Security Projects For Phising Data
 
 Setup github secrets:
@@ -28,6 +27,3 @@ sudo sh get-docker.sh
 sudo usermod -aG docker ubuntu
 
 newgrp docker
-=======
-# NetworkSecurity
->>>>>>> d442f2fb9be00ac417e32a60d68ee822788c99a9
