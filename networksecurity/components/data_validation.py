@@ -36,7 +36,19 @@ class DataValidation:
             return False
         except Exception as e:
             raise NetworkSecurityException(e,sys)
-        
+
+    
+    def validate_numerical_columns(self, dataframe: pd.DataFrame) -> bool:
+        try:
+            numerical_columns = self._schema_config['numerical_columns']
+            missing_columns = [col for col in numerical_columns if col not in dataframe.columns]
+            if missing_columns:
+                logging.error(f"Missing numerical columns: {missing_columns}")
+                return False
+            return True
+        except Exception as e:
+            raise NetworkSecurityException(e, sys)
+
     def detect_dataset_drift(self,base_df,current_df,threshold=0.05)->bool:
         try:
             status=True
